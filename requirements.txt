@@ -1,0 +1,9 @@
+1- Navigation: Brand, About, Products, Contact.
+2- About is the beginning of the page.
+3- Replace find out more with "Check our products" => this will scroll the user to first 8ball table.
+4- name, description, price.
+5- button "Get Started" will open images of the first 8ball table and its related video.
+6- Below this first table the second table will be there with same preferences as first table.
+7- below second table we will have outdoor set same preferences.
+8- In the end, we will have the get in touch.
+9- when mobile clicked, open whatsapp.
