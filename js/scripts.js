@@ -3,11 +3,41 @@
     * Copyright 2013-2020 Start Bootstrap
     * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
     */
-    (function($) {
+
+$(document).ready(function () {
+  /* HANDLEBARS CODE */
+
+  // Retrieve the template data from the HTML (jQuery is used here).
+  var template = $('#portfolio-images-handlebar').html();
+
+  // Compile the template data into a function
+  var templateScript = Handlebars.compile(template);
+
+  var context = {
+    "products": [
+      { "productImage": "1.jpg", "productName": "Test1", "productPrice": "50$" },
+      { "productImage": "2.jpg", "productName": "Test2", "productPrice": "100$" },
+      { "productImage": "3.jpg", "productName": "Test3", "productPrice": "150$" },
+      { "productImage": "4.jpg", "productName": "Test4", "productPrice": "250$" },
+      { "productImage": "5.jpg", "productName": "Test5", "productPrice": "300$" },
+      { "productImage": "6.jpg", "productName": "Test6", "productPrice": "350$" },
+    ]
+  };
+  // html = 'My name is Ritesh Kumar. I am a developer.'
+  var html = templateScript(context);
+
+  // Insert the HTML code into the page
+  $("#portfolio-images").append(html);
+
+
+
+});
+
+(function ($) {
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -21,7 +51,7 @@
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
+  $('.js-scroll-trigger').click(function () {
     $('.navbar-collapse').collapse('hide');
   });
 
@@ -32,7 +62,7 @@
   });
 
   // Collapse Navbar
-  var navbarCollapse = function() {
+  var navbarCollapse = function () {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-scrolled");
     } else {
@@ -43,6 +73,7 @@
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
+
 
   // Magnific popup calls
   $('#portfolio').magnificPopup({
